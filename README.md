@@ -95,3 +95,7 @@ npm run server
 
 ejecucion de la paguina: 
 npm run dev
+
+PARA ENTRAR EN MODO ADMIN:
+admin@gamevault.com  
+cotraseña: 123456
