@@ -3,7 +3,7 @@ import { Juego } from "../../domain/juegos/Juego";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { juegoSchema, JuegoSchema } from "../../application/validators/juegoSchema";
-import { getImageUrl } from "../../domain/shared/utils/imageUtils"; 
+import { getImageUrl } from "../../domain/shared/utils/imageUtils";
 
 interface ProductoFormProps {
   onSubmit: (data: Omit<Juego, "id">) => void;
@@ -22,7 +22,7 @@ const GENEROS = [
   "Estrategia",
   "Deportes",
   "Carreras",
-  "RPG de acción", 
+  "RPG de acción",
   "Roguelike"
 ];
 
@@ -94,7 +94,7 @@ const ProductoForm: React.FC<ProductoFormProps> = ({
     <form onSubmit={handleSubmit(onSubmitForm)}>
       {/* Previsualización de imagen */}
       <div className="mb-4 text-center">
-        <div 
+        <div
           className="d-inline-block border border-secondary rounded overflow-hidden position-relative"
           style={{ width: "150px", height: "200px", backgroundColor: "#000" }}
         >
@@ -108,14 +108,14 @@ const ProductoForm: React.FC<ProductoFormProps> = ({
         </div>
       </div>
 
-     
+
       <div className="mb-3">
         <label className="form-label">Subir Imagen (Portada)</label>
-        <input 
-          type="file" 
-          accept="image/*" 
-          className="form-control" 
-          onChange={handleFileChange} 
+        <input
+          type="file"
+          accept="image/*"
+          className="form-control"
+          onChange={handleFileChange}
         />
         <input type="hidden" {...register("imgFile")} />
         {errors.imgFile && <small className="text-danger">La imagen es requerida</small>}
@@ -128,7 +128,7 @@ const ProductoForm: React.FC<ProductoFormProps> = ({
           {errors.titulo && <small className="text-danger">{errors.titulo.message}</small>}
         </div>
 
-        {/* SELECT PARA PLATAFORMA */}
+
         <div className="mb-3 col-md-6">
           <label className="form-label">Plataforma</label>
           <select className="form-select" {...register("plataforma")}>

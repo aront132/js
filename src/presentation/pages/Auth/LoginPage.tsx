@@ -126,7 +126,7 @@ const LoginPage: React.FC = () => {
               }}
             >
               <p className="mb-1" style={{ color: "var(--text-secondary)" }}>
-                Usuarios de prueba:
+                OJO:
               </p>
               <ul className="list-unstyled mb-0">
                 <li>

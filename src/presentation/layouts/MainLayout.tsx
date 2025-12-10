@@ -22,7 +22,7 @@ const MainLayout = () => {
     const total = 140;
     const next: Star[] = [];
     for (let i = 0; i < total; i++) {
-      const size = Math.random() * 2.5 + 0.7; // 0.7 - 3.2px
+      const size = Math.random() * 2.5 + 0.7; 
       next.push({
         id: i,
         left: Math.random() * 100,

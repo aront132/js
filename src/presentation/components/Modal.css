@@ -1,6 +1,3 @@
-/* Estilos personalizados para el Modal */
-
-/* Fondo de la ventana modal */
 .modal-content {
   background-color: rgba(20, 22, 27, 0.95) !important;
   backdrop-filter: blur(10px);
@@ -9,7 +6,7 @@
   box-shadow: 0 0 50px rgba(0, 0, 0, 0.8) !important;
 }
 
-/* Cabecera del modal */
+
 .modal-header {
   background: rgba(0, 0, 0, 0.2);
   border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
@@ -22,12 +19,12 @@
   letter-spacing: 1px;
 }
 
-/* Cuerpo del modal */
+
 .modal-body {
   padding: 2rem;
 }
 
-/* Input y Textarea dentro del modal */
+
 .modal-body label {
   color: #ccc;
   font-size: 0.9rem;
@@ -49,7 +46,7 @@
   color: #fff;
 }
 
-/* Scrollbar dentro del modal si es muy largo */
+
 .modal-open {
   overflow: hidden;
   padding-right: 0 !important;

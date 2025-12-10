@@ -66,7 +66,7 @@ const AdminProductosPage: React.FC = () => {
   const handleFormSubmit = async (valores: Omit<Juego, "id">) => {
     try {
       if (juegoAEditar) {
-        // PATCH para no borrar datos si no se envían todos
+     
         await JuegosRepository.actualizar(juegoAEditar.id, valores);
       } else {
         await JuegosRepository.crear(valores);
@@ -134,7 +134,8 @@ const AdminProductosPage: React.FC = () => {
                     <button
                       className="btn btn-outline-danger btn-sm"
                       onClick={() => handleRequestDelete(j.id)}
-                    >x
+                    >
+                      
                       <i className="bi bi-trash-fill" />
                     </button>
                   </div>

@@ -5,20 +5,20 @@ const Footer = () => {
     <footer className="gv-footer mt-auto text-light">
       <div className="container py-5">
         <div className="row g-4">
-          
-         
+
+
           <div className="col-lg-4 col-md-6">
             <Link to="/" className="d-flex align-items-center mb-3 text-decoration-none">
               <i className="bi bi-controller fs-3 me-2" style={{ color: "var(--bs-primary)" }}></i>
               <span className="fs-4 fw-bold text-uppercase text-white tracking-wider">GameVault</span>
             </Link>
             <p className="text-secondary mb-4">
-              Tu portal definitivo para juegos digitales. 
+              Tu portal definitivo para juegos digitales.
               Explora, compra y juega al instante con la mejor seguridad y soporte del mercado.
             </p>
           </div>
 
-     
+
           <div className="col-lg-2 col-md-6">
             <h5 className="text-white fw-bold mb-3">Explorar</h5>
             <ul className="list-unstyled">
@@ -55,21 +55,21 @@ const Footer = () => {
             </ul>
           </div>
 
-         
+
           <div className="col-lg-4 col-md-6">
             <h5 className="text-white fw-bold mb-3">Síguenos</h5>
             <p className="text-secondary mb-3">¡Únete a nuestra comunidad gamer!</p>
             <div className="d-flex gap-3">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-btn facebook">ƒ
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-btn facebook">
                 <i className="bi bi-facebook"></i>
               </a>
-              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="social-btn tiktok">𝐓
+              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" className="social-btn tiktok">
                 <i className="bi bi-tiktok"></i>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-btn instagram">𝐈
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-btn instagram">
                 <i className="bi bi-instagram"></i>
               </a>
-              <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="social-btn whatsapp">ω
+              <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" className="social-btn whatsapp">
                 <i className="bi bi-whatsapp"></i>
               </a>
             </div>
@@ -77,7 +77,7 @@ const Footer = () => {
         </div>
       </div>
 
-          <div className="footer-bottom py-3 border-top border-secondary border-opacity-25">
+      <div className="footer-bottom py-3 border-top border-secondary border-opacity-25">
         <div className="container text-center">
           <small className="text-secondary">
             &copy; {new Date().getFullYear()} <strong>GameVault S.A.C.</strong> Todos los derechos reservados.

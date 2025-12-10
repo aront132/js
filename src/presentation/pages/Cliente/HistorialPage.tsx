@@ -50,7 +50,7 @@ const HistorialPage: React.FC = () => {
 
           const resultados = await Promise.all(detallesPromises);
           
-          // Filtramos los nulos (juegos que dieron error)
+        
           const detallesValidos = resultados.filter(
             (r): r is (DetallePedido & { juego: Juego }) => r !== null
           );

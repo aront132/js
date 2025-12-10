@@ -24,7 +24,7 @@ export const useProductoForm = (inicial?: Partial<Juego>) => {
 
   const [errores, setErrores] = useState<ErroresJuego>({});
 
-  // 🔹 Para inputs de texto, número y textarea
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
@@ -39,7 +39,7 @@ export const useProductoForm = (inicial?: Partial<Juego>) => {
     }));
   };
 
-  // 🔹 Para checkbox (destacado)
+
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, checked } = e.target;
     setValores((prev) => ({
@@ -77,7 +77,7 @@ export const useProductoForm = (inicial?: Partial<Juego>) => {
     valores,
     errores,
     handleChange,
-    handleCheckboxChange, // 👈 lo devolvemos también
+    handleCheckboxChange, 
     validar,
     setValores,
     reset,

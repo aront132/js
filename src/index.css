@@ -1,26 +1,24 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
 
 :root {
-  --bs-dark: #0b0c10; /* Fondo más oscuro para resaltar las luces */
+  --bs-dark: #0b0c10; 
   --bs-body-bg: var(--bs-dark);
   --bs-body-color: #c5c6c7;
   --bs-body-font-family: "Roboto", sans-serif;
 
-  /* Paleta Neon Cyberpunk */
-  --bs-primary: #66fcf1; /* Cyan Neón */
+ 
+  --bs-primary: #66fcf1; 
   --bs-primary-rgb: 102, 252, 241;
   --bs-primary-dark: #45a29e;
   --bs-secondary: #1f2833;
   --text-primary: #ffffff;
   --text-secondary: #a0a0a0;
 
-  /* Variables Glassmorphism (Cristal) */
-  --glass-bg: rgba(31, 40, 51, 0.45); /* Semitransparente */
-  --glass-border: rgba(102, 252, 241, 0.15); /* Borde sutil cyan */
-  --glass-blur: 16px; /* Desefonque del fondo */
+
+  --glass-bg: rgba(31, 40, 51, 0.45); 
+  --glass-border: rgba(102, 252, 241, 0.15);
+  --glass-blur: 16px; 
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-  
-  /* Efecto Neón */
   --neon-glow: 0 0 10px rgba(102, 252, 241, 0.5), 0 0 20px rgba(102, 252, 241, 0.3);
 }
 
@@ -28,7 +26,7 @@ body {
   background-color: var(--bs-body-bg);
   color: var(--bs-body-color);
   font-family: var(--bs-body-font-family);
-  overflow-x: hidden; /* Evita scroll horizontal */
+  overflow-x: hidden; 
 }
 
 a {
@@ -42,7 +40,7 @@ a:hover {
   text-shadow: 0 0 8px var(--bs-primary);
 }
 
-/* Scrollbar personalizada */
+
 ::-webkit-scrollbar {
   width: 10px;
 }

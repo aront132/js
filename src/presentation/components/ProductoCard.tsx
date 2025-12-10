@@ -7,7 +7,6 @@ interface Props {
 }
 
 const ProductoCard: React.FC<Props> = ({ juego }) => {
-  // Usamos la función helper para obtener la URL correcta
   const imgUrl = getImageUrl(juego.imgFile);
 
   return (

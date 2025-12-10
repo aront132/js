@@ -1,11 +1,11 @@
 .custom-card {
-  /* Efecto Glassmorphism */
+
   background: var(--glass-bg);
   backdrop-filter: blur(var(--glass-blur));
-  -webkit-backdrop-filter: blur(var(--glass-blur)); /* Soporte Safari */
+  -webkit-backdrop-filter: blur(var(--glass-blur));
   
   border: 1px solid var(--glass-border);
-  border-radius: 16px; /* Bordes más redondeados */
+  border-radius: 16px; 
   padding: 2rem;
   box-shadow: var(--glass-shadow);
   
@@ -13,7 +13,7 @@
   color: var(--text-primary);
 }
 
-/* Efecto al pasar el mouse: la tarjeta se "enciende" */
+
 .custom-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 40px rgba(102, 252, 241, 0.15);

@@ -135,6 +135,6 @@ input[type="file"]::file-selector-button:hover {
 }
 
 .form-select option {
-  background-color: #1e1e1e; /* Fondo oscuro sólido */
-  color: white;              /* Texto blanco */
+  background-color: #1e1e1e; 
+  color: white;           
 }
