@@ -50,7 +50,7 @@
       "titulo": "Hollow Knight: Silksong",
       "descripcion": "Secuela del aclamado Hollow Knight. ",
       "precio": 49.99,
-      "stock": 8,
+      "stock": 7,
       "plataforma": "Steam",
       "genero": "Indie",
       "desarrollador": "Team Cherry",
@@ -85,15 +85,24 @@
       "destacado": false
     },
     {
-      "stock": 11,
-      "id": "7"
+      "id": "7",
+      "titulo": "Cyberpunk 2077",
+      "descripcion": "Interpreta a V, un mercenario en Night City, una metrópolis futurista obsesionada con el poder y la modificación cibernética. Personaliza tu estilo de juego, mejora tus implantes y toma decisiones que tendrán consecuencias en una historia oscura y adulta.",
+      "precio": 159.99,
+      "stock": 12,
+      "plataforma": "Steam",
+      "genero": "Acción / RPG",
+      "desarrollador": "CD PROJEKT RED",
+      "lanzamiento": "2020-12-10",
+      "imgFile": "cyberpunk_2077.jpg",
+      "destacado": false
     },
     {
       "id": "8",
       "titulo": "Marvel's Spider-Man Remastered",
       "descripcion": "Ponte el traje de Spider-Man y recorre Nueva York balanceándote entre rascacielos, deteniendo crímenes y enfrentando a un elenco icónico de villanos. Disfruta un sistema de combate fluido, una historia emotiva y muchas misiones secundarias llenas de acción.",
       "precio": 199.99,
-      "stock": 6,
+      "stock": 5,
       "plataforma": "PlayStation",
       "genero": "Acción / Aventura",
       "desarrollador": "Insomniac Games",
@@ -180,19 +189,6 @@
       "destacado": true
     },
     {
-      "id": "15",
-      "titulo": "Hollow Knight",
-      "descripcion": "Explora el reino en ruinas de Hallownest en este desafiante juego de exploración con estética dibujada a mano. Derrota jefes, desbloquea habilidades y descubre secretos en un mundo interconectado lleno de personajes misteriosos.",
-      "precio": 49.99,
-      "stock": 18,
-      "plataforma": "Steam",
-      "genero": "Indie",
-      "desarrollador": "Team Cherry",
-      "lanzamiento": "2017-02-24",
-      "imgFile": "hollow_knight.jpg",
-      "destacado": true
-    },
-    {
       "id": "16",
       "titulo": "Assassin's Creed Valhalla",
       "descripcion": "Interpreta a Eivor, un guerrero vikingo que lidera a su clan desde Noruega hasta las costas de Inglaterra. Saquea monasterios, establece tu asentamiento y toma decisiones que afectarán el destino de tu pueblo en un inmenso mundo abierto.",
@@ -275,7 +271,7 @@
       "titulo": "Uncharted 4: A Thief's End",
       "descripcion": "Nathan Drake regresa para una última gran aventura en busca del tesoro de un legendario pirata. Combina exploración, tiroteos y espectaculares secuencias cinematográficas en una historia sobre familia y sacrificio.",
       "precio": 159.99,
-      "stock": 5,
+      "stock": 4,
       "plataforma": "PlayStation",
       "genero": "Acción / Aventura",
       "desarrollador": "Naughty Dog",
@@ -364,18 +360,63 @@
   ],
   "pedidos": [
     {
-      "id": "dc60",
+      "id": "0055",
+      "usuarioId": "1",
+      "fecha": "2025-12-10T07:52:33.276Z",
+      "total": 199.99,
+      "estado": "pagado"
+    },
+    {
+      "id": "c1f0",
       "usuarioId": "fad5",
-      "fecha": "2025-12-10T07:42:40.535Z",
+      "fecha": "2025-12-10T07:53:52.436Z",
+      "total": 49.99,
+      "estado": "pagado"
+    },
+    {
+      "id": "cc61",
+      "usuarioId": "fad5",
+      "fecha": "2025-12-10T07:54:40.105Z",
       "total": 159.99,
       "estado": "pagado"
+    },
+    {
+      "id": "b7d8",
+      "usuarioId": "fad5",
+      "fecha": "2025-12-10T07:55:17.501Z",
+      "total": 159.99,
+      "estado": "cancelado"
     }
   ],
   "detallePedidos": [
     {
-      "id": "65ae",
-      "pedidoId": "dc60",
-      "juegoId": "7",
+      "id": "c04d",
+      "pedidoId": "0055",
+      "juegoId": "8",
+      "cantidad": 1,
+      "precioUnitario": 199.99,
+      "subtotal": 199.99
+    },
+    {
+      "id": "ba7f",
+      "pedidoId": "c1f0",
+      "juegoId": "3",
+      "cantidad": 1,
+      "precioUnitario": 49.99,
+      "subtotal": 49.99
+    },
+    {
+      "id": "a7f3",
+      "pedidoId": "cc61",
+      "juegoId": "22",
+      "cantidad": 1,
+      "precioUnitario": 159.99,
+      "subtotal": 159.99
+    },
+    {
+      "id": "361c",
+      "pedidoId": "b7d8",
+      "juegoId": "22",
       "cantidad": 1,
       "precioUnitario": 159.99,
       "subtotal": 159.99

@@ -17,8 +17,9 @@ const JuegosRepository = {
     return { ...res.data, id: String(res.data.id) };
   },
 
+
   actualizar: async (id: string, juego: Partial<Juego>): Promise<Juego> => {
-    const res = await api.put<any>(`/juegos/${id}`, juego);
+    const res = await api.patch<any>(`/juegos/${id}`, juego);
     return { ...res.data, id: String(res.data.id) };
   },
 
