@@ -97,5 +97,10 @@ ejecucion de la paguina:
 npm run dev
 
 PARA ENTRAR EN MODO ADMIN:
-admin@gamevault.com  
+correo: admin@gamevault.com  
 cotraseña: 123456
+
+para creas cuenta como cliente poner contraseña de 6 digitos:
+cuenta de prueba:
+cliente@gamevault.com  
+123456
