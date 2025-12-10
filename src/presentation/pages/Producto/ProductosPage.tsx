@@ -30,35 +30,43 @@ const ProductosPage: React.FC = () => {
     cargar();
   }, []);
 
+
   const plataformas = useMemo(
-    () => Array.from(new Set(juegos.map((j) => j.plataforma))),
+    () =>
+      Array.from(new Set(juegos.map((j) => j.plataforma).filter(Boolean))),
     [juegos]
   );
+
   const generos = useMemo(
-    () => Array.from(new Set(juegos.map((j) => j.genero))),
+    () => Array.from(new Set(juegos.map((j) => j.genero).filter(Boolean))),
     [juegos]
   );
 
   const juegosFiltrados = juegos.filter((j) => {
+    // Protección adicional por si la plataforma/genero viene undefined en la data
+    const plataformaJuego = j.plataforma ? j.plataforma.toLowerCase() : "";
+    const generoJuego = j.genero ? j.genero.toLowerCase() : "";
+
     if (
       filtroPlataforma !== "todos" &&
-      j.plataforma.toLowerCase() !== filtroPlataforma.toLowerCase()
+      plataformaJuego !== filtroPlataforma.toLowerCase()
     )
       return false;
     if (
       filtroGenero !== "todos" &&
-      j.genero.toLowerCase() !== filtroGenero.toLowerCase()
+      generoJuego !== filtroGenero.toLowerCase()
     )
       return false;
+    
     if (!busqueda) return true;
-    const texto = `${j.titulo} ${j.plataforma} ${j.genero}`.toLowerCase();
+    
+    const texto = `${j.titulo} ${plataformaJuego} ${generoJuego}`.toLowerCase();
     return texto.includes(busqueda);
   });
 
   return (
     <div className="container py-5">
       <h1 className="mb-4">Catálogo de juegos</h1>
-
 
       <Card className="mb-4">
         <div className="row align-items-end">

@@ -46,10 +46,6 @@
   ],
   "juegos": [
     {
-      "stock": 11,
-      "id": "1"
-    },
-    {
       "id": "3",
       "titulo": "Hollow Knight: Silksong",
       "descripcion": "Secuela del aclamado Hollow Knight. ",
@@ -89,17 +85,8 @@
       "destacado": false
     },
     {
-      "id": "7",
-      "titulo": "Cyberpunk 2077",
-      "descripcion": "Interpreta a V, un mercenario en Night City, una metrópolis futurista obsesionada con el poder y la modificación cibernética. Personaliza tu estilo de juego, mejora tus implantes y toma decisiones que tendrán consecuencias en una historia oscura y adulta.",
-      "precio": 159.99,
-      "stock": 12,
-      "plataforma": "Steam",
-      "genero": "Acción / RPG",
-      "desarrollador": "CD PROJEKT RED",
-      "lanzamiento": "2020-12-10",
-      "imgFile": "cyberpunk_2077.jpg",
-      "destacado": false
+      "stock": 11,
+      "id": "7"
     },
     {
       "id": "8",
@@ -377,171 +364,21 @@
   ],
   "pedidos": [
     {
-      "id": "1",
-      "usuarioId": 2,
-      "fecha": "2025-11-21T10:30:00",
-      "total": 129.98,
-      "estado": "cancelado"
-    },
-    {
-      "id": "63d4",
-      "usuarioId": 1,
-      "fecha": "2025-11-21T07:04:11.047Z",
-      "total": 89.99,
-      "estado": "pendiente"
-    },
-    {
-      "id": "1668",
-      "usuarioId": 2,
-      "fecha": "2025-11-21T07:18:00.728Z",
-      "total": 39.99,
-      "estado": "cancelado"
-    },
-    {
-      "id": "b78a",
-      "usuarioId": 2,
-      "fecha": "2025-11-22T05:49:04.048Z",
-      "total": 89.99,
-      "estado": "cancelado"
-    },
-    {
-      "id": "e31a",
-      "usuarioId": 2,
-      "fecha": "2025-11-22T05:59:50.848Z",
-      "total": 39.99,
-      "estado": "cancelado"
-    },
-    {
-      "id": "983d",
-      "usuarioId": 2,
-      "fecha": "2025-11-22T06:06:18.447Z",
-      "total": 259.99,
-      "estado": "pagado"
-    },
-    {
-      "id": "b48f",
-      "usuarioId": 2,
-      "fecha": "2025-12-08T08:10:07.306Z",
-      "total": 89.99,
-      "estado": "cancelado"
-    },
-    {
-      "id": "3fc1",
-      "usuarioId": 2,
-      "fecha": "2025-12-08T08:43:55.266Z",
-      "total": 39.99,
-      "estado": "cancelado"
-    },
-    {
-      "id": "51e8",
-      "usuarioId": "2",
-      "fecha": "2025-12-10T02:10:07.772Z",
-      "total": 39.99,
-      "estado": "pagado"
-    },
-    {
-      "id": "4b52",
-      "usuarioId": "6682",
-      "fecha": "2025-12-10T06:45:21.187Z",
-      "total": 219.99,
-      "estado": "pagado"
-    },
-    {
-      "id": "a6ac",
-      "usuarioId": "2",
-      "fecha": "2025-12-10T07:28:40.797Z",
-      "total": 89.99,
+      "id": "dc60",
+      "usuarioId": "fad5",
+      "fecha": "2025-12-10T07:42:40.535Z",
+      "total": 159.99,
       "estado": "pagado"
     }
   ],
   "detallePedidos": [
     {
-      "id": "1",
-      "pedidoId": 1,
-      "juegoId": 1,
+      "id": "65ae",
+      "pedidoId": "dc60",
+      "juegoId": "7",
       "cantidad": 1,
-      "precioUnitario": 89.99,
-      "subtotal": 89.99
-    },
-    {
-      "id": "2",
-      "pedidoId": 1,
-      "juegoId": 2,
-      "cantidad": 1,
-      "precioUnitario": 39.99,
-      "subtotal": 39.99
-    },
-    {
-      "id": "05ff",
-      "pedidoId": "63d4",
-      "juegoId": 1,
-      "cantidad": 1,
-      "precioUnitario": 89.99,
-      "subtotal": 89.99
-    },
-    {
-      "id": "d309",
-      "pedidoId": 1668,
-      "juegoId": 2,
-      "cantidad": 1,
-      "precioUnitario": 39.99,
-      "subtotal": 39.99
-    },
-    {
-      "id": "8a3d",
-      "pedidoId": "e31a",
-      "juegoId": 2,
-      "cantidad": 1,
-      "precioUnitario": 39.99,
-      "subtotal": 39.99
-    },
-    {
-      "id": "be9d",
-      "pedidoId": "983d",
-      "juegoId": 3,
-      "cantidad": 1,
-      "precioUnitario": 259.99,
-      "subtotal": 259.99
-    },
-    {
-      "id": "36aa",
-      "pedidoId": "b48f",
-      "juegoId": 1,
-      "cantidad": 1,
-      "precioUnitario": 89.99,
-      "subtotal": 89.99
-    },
-    {
-      "id": "7db7",
-      "pedidoId": "3fc1",
-      "juegoId": 2,
-      "cantidad": 1,
-      "precioUnitario": 39.99,
-      "subtotal": 39.99
-    },
-    {
-      "id": "0c13",
-      "pedidoId": "51e8",
-      "juegoId": "2",
-      "cantidad": 1,
-      "precioUnitario": 39.99,
-      "subtotal": 39.99
-    },
-    {
-      "id": "1fce",
-      "pedidoId": "4b52",
-      "juegoId": "5",
-      "cantidad": 1,
-      "precioUnitario": 219.99,
-      "subtotal": 219.99
-    },
-    {
-      "id": "4ff7",
-      "pedidoId": "a6ac",
-      "juegoId": "1",
-      "cantidad": 1,
-      "precioUnitario": 89.99,
-      "subtotal": 89.99
+      "precioUnitario": 159.99,
+      "subtotal": 159.99
     }
   ]
 }
