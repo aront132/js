@@ -1,0 +1,70 @@
+/* Importar fuente de Google */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+/* 
+  Paleta de colores moderna y profesional (dark theme)
+  Inspirada en Material Design y temas de VS Code
+*/
+:root {
+  --bs-dark: #121212;
+  --bs-dark-rgb: 18, 18, 18;
+
+  --bs-body-bg: var(--bs-dark);
+  --bs-body-color: #e0e0e0;
+  --bs-body-font-family: "Roboto", sans-serif;
+
+  /* Color de acento principal */
+  --bs-primary: #448aff; /* Un azul más vibrante y amigable */
+  --bs-primary-rgb: 68, 138, 255;
+  --bs-primary-light: #69a1ff;
+  --bs-primary-dark: #2962ff;
+
+  /* Colores para superficies (cards, modales, etc.) */
+  --surface-color: #1e1e1e;
+  --surface-color-light: #2c2c2c;
+  --surface-color-dark: #1a1a1a;
+
+  /* Colores de texto */
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0a0;
+  --text-disabled: #616161;
+
+  /* Otros colores */
+  --bs-secondary: #6c757d;
+  --bs-success: #66bb6a;
+  --bs-info: #29b6f6;
+  --bs-warning: #ffa726;
+  --bs-danger: #ef5350;
+
+  --bs-border-color: #333;
+}
+
+body {
+  background-color: var(--bs-body-bg);
+  color: var(--bs-body-color);
+  font-family: var(--bs-body-font-family);
+}
+
+a {
+  color: var(--bs-primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+a:hover {
+  color: var(--bs-primary-light);
+}
+
+/* Estilos para la barra de scroll (opcional pero mejora la estética) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-color-dark);
+}
+::-webkit-scrollbar-thumb {
+  background-color: var(--surface-color-light);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--bs-secondary);
+}

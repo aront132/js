@@ -1,0 +1,530 @@
+{
+  "usuarios": [
+    {
+      "id": "1",
+      "rol": "admin",
+      "nombre": "Administrador",
+      "apellido": "General",
+      "pais": "Perú",
+      "departamento": "Lima",
+      "correo": "admin@gamevault.com",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "rol": "cliente",
+      "nombre": "Kevin",
+      "apellido": "Gamer",
+      "edad": 20,
+      "pais": "Perú",
+      "departamento": "Lima",
+      "correo": "cliente@gamevault.com",
+      "password": "123456"
+    },
+    {
+      "id": "6682",
+      "nombre": "jose",
+      "apellido": "ortiz",
+      "edad": 22,
+      "pais": "peru",
+      "departamento": "lima",
+      "correo": "ta@gmail.com",
+      "password": "123",
+      "rol": "cliente"
+    }
+  ],
+  "juegos": [
+    {
+      "titulo": "Grand Theft Auto V",
+      "plataforma": "Steam",
+      "genero": "Acción",
+      "precio": 89.99,
+      "stock": 12,
+      "descripcion": "Juego de mundo abierto con modo historia y modo online.",
+      "imgFile": "gta_v.png",
+      "destacado": true,
+      "desarrollador": "Rockstar Games",
+      "lanzamiento": "2015-04-14",
+      "id": "1"
+    },
+    {
+      "id": "3",
+      "titulo": "Hollow Knight: Silksong",
+      "descripcion": "Secuela del aclamado Hollow Knight. ",
+      "precio": 49.99,
+      "stock": 8,
+      "plataforma": "Steam",
+      "genero": "Indie",
+      "desarrollador": "Team Cherry",
+      "lanzamiento": "2025-12-31",
+      "imgFile": "hollow_knight.jpg",
+      "destacado": false
+    },
+    {
+      "id": "4",
+      "titulo": "Elden Ring",
+      "descripcion": "Un RPG de mundo abierto donde exploras Las Tierras Intermedias enfrentando jefes colosales, descubriendo mazmorras ocultas y forjando tu propio destino como el Sinluz. Cada decisión y camino que tomes afectará tu forma de jugar y las herramientas que tendrás para vencer.",
+      "precio": 249.99,
+      "stock": 5,
+      "plataforma": "PlayStation",
+      "genero": "RPG de acción",
+      "desarrollador": "FromSoftware",
+      "lanzamiento": "2022-02-25",
+      "imgFile": "elden_ring.jpg",
+      "destacado": true
+    },
+    {
+      "id": "6",
+      "titulo": "Horizon Forbidden West",
+      "descripcion": "Aloy viaja al Oeste Prohibido para investigar una misteriosa plaga que amenaza con destruir toda vida en la Tierra. Enfréntate a enormes bestias mecánicas, mejora tus armas y descubre antiguos secretos en un mundo abierto lleno de detalles y biomas variados.",
+      "precio": 229.99,
+      "stock": 3,
+      "plataforma": "PlayStation",
+      "genero": "Mundo abierto",
+      "desarrollador": "Guerrilla Games",
+      "lanzamiento": "2022-02-18",
+      "imgFile": "horizon_forbidden_west.jpg",
+      "destacado": false
+    },
+    {
+      "id": "7",
+      "titulo": "Cyberpunk 2077",
+      "descripcion": "Interpreta a V, un mercenario en Night City, una metrópolis futurista obsesionada con el poder y la modificación cibernética. Personaliza tu estilo de juego, mejora tus implantes y toma decisiones que tendrán consecuencias en una historia oscura y adulta.",
+      "precio": 159.99,
+      "stock": 12,
+      "plataforma": "Steam",
+      "genero": "Acción / RPG",
+      "desarrollador": "CD PROJEKT RED",
+      "lanzamiento": "2020-12-10",
+      "imgFile": "cyberpunk_2077.jpg",
+      "destacado": false
+    },
+    {
+      "id": "8",
+      "titulo": "Marvel's Spider-Man Remastered",
+      "descripcion": "Ponte el traje de Spider-Man y recorre Nueva York balanceándote entre rascacielos, deteniendo crímenes y enfrentando a un elenco icónico de villanos. Disfruta un sistema de combate fluido, una historia emotiva y muchas misiones secundarias llenas de acción.",
+      "precio": 199.99,
+      "stock": 6,
+      "plataforma": "PlayStation",
+      "genero": "Acción / Aventura",
+      "desarrollador": "Insomniac Games",
+      "lanzamiento": "2018-09-07",
+      "imgFile": "marvel_spider_man_remastered.jpg",
+      "destacado": true
+    },
+    {
+      "id": "9",
+      "titulo": "Red Dead Redemption 2",
+      "descripcion": "Vive el ocaso del Viejo Oeste como Arthur Morgan, miembro de una banda de forajidos en constante huida. Caza, pesca, participa en tiroteos y toma decisiones morales que afectarán tu relación con el mundo y con los personajes que te rodean.",
+      "precio": 149.99,
+      "stock": 9,
+      "plataforma": "Steam",
+      "genero": "Acción / Mundo abierto",
+      "desarrollador": "Rockstar Games",
+      "lanzamiento": "2018-10-26",
+      "imgFile": "red_dead_redemption_2.jpg",
+      "destacado": false
+    },
+    {
+      "id": "10",
+      "titulo": "Resident Evil 4 Remake",
+      "descripcion": "Leon S. Kennedy es enviado a un remoto pueblo europeo para rescatar a la hija del presidente de los Estados Unidos. Enfréntate a aldeanos poseídos, resuelve puzles y administra tus recursos en una intensa experiencia de survival horror renovada.",
+      "precio": 239.99,
+      "stock": 4,
+      "plataforma": "PlayStation",
+      "genero": "Survival Horror",
+      "desarrollador": "Capcom",
+      "lanzamiento": "2023-03-24",
+      "imgFile": "resident_evil_4_remake.jpg",
+      "destacado": true
+    },
+    {
+      "id": "11",
+      "titulo": "Hades",
+      "descripcion": "Un roguelike de acción donde juegas como Zagreus, el hijo de Hades, intentando escapar del Inframundo. Cada intento te permite desbloquear nuevas mejoras, armas y diálogos con dioses del Olimpo, combinando una jugabilidad rápida con una historia muy carismática.",
+      "precio": 59.99,
+      "stock": 15,
+      "plataforma": "Steam",
+      "genero": "Roguelike / Acción",
+      "desarrollador": "Supergiant Games",
+      "lanzamiento": "2020-09-17",
+      "imgFile": "hades.jpg",
+      "destacado": true
+    },
+    {
+      "id": "12",
+      "titulo": "Ghost of Tsushima Director's Cut",
+      "descripcion": "Acompaña a Jin Sakai en la defensa de Tsushima durante la invasión mongola. Decide entre el camino del honorable samurái o el sigiloso ‘fantasma’ mientras exploras paisajes hermosos, realizas duelos épicos y descubres historias secundarias profundas.",
+      "precio": 219.99,
+      "stock": 5,
+      "plataforma": "PlayStation",
+      "genero": "Acción / Mundo abierto",
+      "desarrollador": "Sucker Punch Productions",
+      "lanzamiento": "2021-08-20",
+      "imgFile": "ghost_of_tsushima_directors_cut.jpg",
+      "destacado": true
+    },
+    {
+      "id": "13",
+      "titulo": "Stardew Valley",
+      "descripcion": "Hereda una vieja granja y conviértela en un lugar próspero cultivando, cuidando animales, minando, pescando y relacionándote con los habitantes del pueblo. Un juego relajante pero profundo donde puedes crear tu propio estilo de vida rural.",
+      "precio": 39.99,
+      "stock": 20,
+      "plataforma": "Steam",
+      "genero": "Simulación / RPG",
+      "desarrollador": "ConcernedApe",
+      "lanzamiento": "2016-02-26",
+      "imgFile": "stardew_valley.jpg",
+      "destacado": false
+    },
+    {
+      "id": "14",
+      "titulo": "Sekiro: Shadows Die Twice",
+      "descripcion": "Controla a un shinobi conocido como el Lobo mientras busca venganza en un Japón feudal oscuro y fantástico. Domina un sistema de combate preciso basado en la postura, esquivas y parrys donde cada duelo se siente como una intensa batalla de habilidad.",
+      "precio": 199.99,
+      "stock": 4,
+      "plataforma": "PlayStation",
+      "genero": "Acción / Aventura",
+      "desarrollador": "FromSoftware",
+      "lanzamiento": "2019-03-22",
+      "imgFile": "sekiro_shadows_die_twice.jpg",
+      "destacado": true
+    },
+    {
+      "id": "15",
+      "titulo": "Hollow Knight",
+      "descripcion": "Explora el reino en ruinas de Hallownest en este desafiante juego de exploración con estética dibujada a mano. Derrota jefes, desbloquea habilidades y descubre secretos en un mundo interconectado lleno de personajes misteriosos.",
+      "precio": 49.99,
+      "stock": 18,
+      "plataforma": "Steam",
+      "genero": "Indie",
+      "desarrollador": "Team Cherry",
+      "lanzamiento": "2017-02-24",
+      "imgFile": "hollow_knight.jpg",
+      "destacado": true
+    },
+    {
+      "id": "16",
+      "titulo": "Assassin's Creed Valhalla",
+      "descripcion": "Interpreta a Eivor, un guerrero vikingo que lidera a su clan desde Noruega hasta las costas de Inglaterra. Saquea monasterios, establece tu asentamiento y toma decisiones que afectarán el destino de tu pueblo en un inmenso mundo abierto.",
+      "precio": 189.99,
+      "stock": 7,
+      "plataforma": "PlayStation",
+      "genero": "Acción / Mundo abierto",
+      "desarrollador": "Ubisoft",
+      "lanzamiento": "2020-11-10",
+      "imgFile": "assassins_creed_valhalla.jpg",
+      "destacado": false
+    },
+    {
+      "id": "17",
+      "titulo": "The Witcher 3: Wild Hunt",
+      "descripcion": "Acompaña a Geralt de Rivia, un cazador de monstruos, en la búsqueda de su hija adoptiva mientras el mundo se desgarra por la guerra. Toma decisiones morales complejas, completa misiones memorables y mejora tus habilidades en un vasto RPG de fantasía oscura.",
+      "precio": 129.99,
+      "stock": 14,
+      "plataforma": "Steam",
+      "genero": "Acción / RPG",
+      "desarrollador": "CD PROJEKT RED",
+      "lanzamiento": "2015-05-19",
+      "imgFile": "the_witcher_3_wild_hunt.jpg",
+      "destacado": true
+    },
+    {
+      "id": "18",
+      "titulo": "Death Stranding Director's Cut",
+      "descripcion": "En un futuro postapocalíptico, Sam Bridges debe reconectar ciudades aisladas transportando cargamento a través de un territorio peligroso. Gestiona el peso, planifica rutas y usa herramientas y estructuras compartidas con otros jugadores en un viaje único y contemplativo.",
+      "precio": 229.99,
+      "stock": 5,
+      "plataforma": "PlayStation",
+      "genero": "Aventura",
+      "desarrollador": "Kojima Productions",
+      "lanzamiento": "2021-09-24",
+      "imgFile": "death_stranding_directors_cut.jpg",
+      "destacado": false
+    },
+    {
+      "id": "19",
+      "titulo": "Celeste",
+      "descripcion": "Ayuda a Madeline a escalar una montaña llena de peligros mientras enfrenta sus propios miedos. Un desafiante juego de plataformas con controles precisos, narrativa emotiva y una banda sonora inolvidable.",
+      "precio": 39.99,
+      "stock": 16,
+      "plataforma": "Steam",
+      "genero": "Indie",
+      "desarrollador": "Maddy Makes Games",
+      "lanzamiento": "2018-01-25",
+      "imgFile": "celeste.jpg",
+      "destacado": true
+    },
+    {
+      "id": "20",
+      "titulo": "Days Gone",
+      "descripcion": "Súbete a tu motocicleta como Deacon St. John y recorre un mundo abierto lleno de infectados y bandas hostiles. Gestiona recursos, mejora tu moto y enfréntate a enormes hordas de enemigos en un entorno hostil pero inmersivo.",
+      "precio": 169.99,
+      "stock": 6,
+      "plataforma": "PlayStation",
+      "genero": "Acción / Mundo abierto",
+      "desarrollador": "Bend Studio",
+      "lanzamiento": "2019-04-26",
+      "imgFile": "days_gone.jpg",
+      "destacado": false
+    },
+    {
+      "id": "21",
+      "titulo": "Dark Souls III",
+      "descripcion": "Entra en un mundo sombrío lleno de caballeros caídos, criaturas grotescas y reyes olvidados. Un RPG de acción exigente donde aprender los patrones de los enemigos y perfeccionar tus movimientos es la clave para sobrevivir.",
+      "precio": 149.99,
+      "stock": 11,
+      "plataforma": "Steam",
+      "genero": "RPG de acción",
+      "desarrollador": "FromSoftware",
+      "lanzamiento": "2016-04-12",
+      "imgFile": "dark_souls_3.jpg",
+      "destacado": true
+    },
+    {
+      "id": "22",
+      "titulo": "Uncharted 4: A Thief's End",
+      "descripcion": "Nathan Drake regresa para una última gran aventura en busca del tesoro de un legendario pirata. Combina exploración, tiroteos y espectaculares secuencias cinematográficas en una historia sobre familia y sacrificio.",
+      "precio": 159.99,
+      "stock": 5,
+      "plataforma": "PlayStation",
+      "genero": "Acción / Aventura",
+      "desarrollador": "Naughty Dog",
+      "lanzamiento": "2016-05-10",
+      "imgFile": "uncharted_4_a_thiefs_end.jpg",
+      "destacado": true
+    },
+    {
+      "id": "23",
+      "titulo": "Subnautica",
+      "descripcion": "Tras un accidente espacial, quedas atrapado en un planeta oceánico alienígena. Explora profundidades desconocidas, construye bases submarinas, mejora tu equipo y descubre qué secretos esconde este mundo lleno de criaturas extrañas.",
+      "precio": 79.99,
+      "stock": 13,
+      "plataforma": "Steam",
+      "genero": "Aventura",
+      "desarrollador": "Unknown Worlds Entertainment",
+      "lanzamiento": "2018-01-23",
+      "imgFile": "subnautica.jpg",
+      "destacado": false
+    },
+    {
+      "id": "24",
+      "titulo": "Bloodborne",
+      "descripcion": "Adéntrate en la ciudad gótica de Yharnam, plagada de una misteriosa enfermedad y bestias aterradoras. Un RPG de acción rápido y agresivo donde la mejor defensa es un buen ataque y la atmósfera de terror es constante.",
+      "precio": 179.99,
+      "stock": 4,
+      "plataforma": "PlayStation",
+      "genero": "RPG de acción",
+      "desarrollador": "FromSoftware",
+      "lanzamiento": "2015-03-24",
+      "imgFile": "bloodborne.jpg",
+      "destacado": true
+    },
+    {
+      "id": "25",
+      "titulo": "Dead by Daylight",
+      "descripcion": "Juego multijugador asimétrico en el que cuatro supervivientes intentan escapar de un asesino imparable. Repara generadores, coopera con tus compañeros o persigue a tus presas usando habilidades únicas en escenarios llenos de tensión.",
+      "precio": 99.99,
+      "stock": 17,
+      "plataforma": "Steam",
+      "genero": "Survival Horror",
+      "desarrollador": "Behaviour Interactive",
+      "lanzamiento": "2016-06-14",
+      "imgFile": "dead_by_daylight.jpg",
+      "destacado": false
+    },
+    {
+      "id": "26",
+      "titulo": "Ratchet & Clank: Rift Apart",
+      "descripcion": "Viaja entre dimensiones con Ratchet y su inseparable robot Clank en una aventura colorida y llena de humor. Usa un arsenal de armas alocadas, realiza saltos interdimensionales instantáneos y disfruta de una presentación técnica espectacular.",
+      "precio": 249.99,
+      "stock": 6,
+      "plataforma": "PlayStation",
+      "genero": "Acción / Aventura",
+      "desarrollador": "Insomniac Games",
+      "lanzamiento": "2021-06-11",
+      "imgFile": "ratchet_and_clank_rift_apart.jpg",
+      "destacado": true
+    },
+    {
+      "id": "27",
+      "titulo": "No Man's Sky",
+      "descripcion": "Explora un universo prácticamente infinito lleno de planetas generados de forma procedimental. Descubre nuevas especies, comercia, construye bases y mejora tu nave mientras avanzas en tu propia aventura espacial.",
+      "precio": 129.99,
+      "stock": 10,
+      "plataforma": "Steam",
+      "genero": "Mundo abierto",
+      "desarrollador": "Hello Games",
+      "lanzamiento": "2016-08-12",
+      "imgFile": "no_mans_sky.jpg",
+      "destacado": false
+    },
+    {
+      "id": "28",
+      "titulo": "Persona 5 Royal",
+      "descripcion": "Vive el día a día como un estudiante de instituto en Tokio mientras, en secreto, te conviertes en un ladrón fantasma que cambia el corazón de adultos corruptos. Combina vida social, gestión de tiempo y combates por turnos en un estilizado RPG japonés.",
+      "precio": 229.99,
+      "stock": 8,
+      "plataforma": "PlayStation",
+      "genero": "RPG",
+      "desarrollador": "Atlus",
+      "lanzamiento": "2019-10-31",
+      "imgFile": "persona_5_royal.jpg",
+      "destacado": true
+    }
+  ],
+  "pedidos": [
+    {
+      "id": "1",
+      "usuarioId": 2,
+      "fecha": "2025-11-21T10:30:00",
+      "total": 129.98,
+      "estado": "cancelado"
+    },
+    {
+      "id": "63d4",
+      "usuarioId": 1,
+      "fecha": "2025-11-21T07:04:11.047Z",
+      "total": 89.99,
+      "estado": "pendiente"
+    },
+    {
+      "id": "1668",
+      "usuarioId": 2,
+      "fecha": "2025-11-21T07:18:00.728Z",
+      "total": 39.99,
+      "estado": "cancelado"
+    },
+    {
+      "id": "b78a",
+      "usuarioId": 2,
+      "fecha": "2025-11-22T05:49:04.048Z",
+      "total": 89.99,
+      "estado": "cancelado"
+    },
+    {
+      "id": "e31a",
+      "usuarioId": 2,
+      "fecha": "2025-11-22T05:59:50.848Z",
+      "total": 39.99,
+      "estado": "cancelado"
+    },
+    {
+      "id": "983d",
+      "usuarioId": 2,
+      "fecha": "2025-11-22T06:06:18.447Z",
+      "total": 259.99,
+      "estado": "pagado"
+    },
+    {
+      "id": "b48f",
+      "usuarioId": 2,
+      "fecha": "2025-12-08T08:10:07.306Z",
+      "total": 89.99,
+      "estado": "cancelado"
+    },
+    {
+      "id": "3fc1",
+      "usuarioId": 2,
+      "fecha": "2025-12-08T08:43:55.266Z",
+      "total": 39.99,
+      "estado": "cancelado"
+    },
+    {
+      "id": "51e8",
+      "usuarioId": "2",
+      "fecha": "2025-12-10T02:10:07.772Z",
+      "total": 39.99,
+      "estado": "pagado"
+    },
+    {
+      "id": "4b52",
+      "usuarioId": "6682",
+      "fecha": "2025-12-10T06:45:21.187Z",
+      "total": 219.99,
+      "estado": "pagado"
+    }
+  ],
+  "detallePedidos": [
+    {
+      "id": "1",
+      "pedidoId": 1,
+      "juegoId": 1,
+      "cantidad": 1,
+      "precioUnitario": 89.99,
+      "subtotal": 89.99
+    },
+    {
+      "id": "2",
+      "pedidoId": 1,
+      "juegoId": 2,
+      "cantidad": 1,
+      "precioUnitario": 39.99,
+      "subtotal": 39.99
+    },
+    {
+      "id": "05ff",
+      "pedidoId": "63d4",
+      "juegoId": 1,
+      "cantidad": 1,
+      "precioUnitario": 89.99,
+      "subtotal": 89.99
+    },
+    {
+      "id": "d309",
+      "pedidoId": 1668,
+      "juegoId": 2,
+      "cantidad": 1,
+      "precioUnitario": 39.99,
+      "subtotal": 39.99
+    },
+    {
+      "id": "8a3d",
+      "pedidoId": "e31a",
+      "juegoId": 2,
+      "cantidad": 1,
+      "precioUnitario": 39.99,
+      "subtotal": 39.99
+    },
+    {
+      "id": "be9d",
+      "pedidoId": "983d",
+      "juegoId": 3,
+      "cantidad": 1,
+      "precioUnitario": 259.99,
+      "subtotal": 259.99
+    },
+    {
+      "id": "36aa",
+      "pedidoId": "b48f",
+      "juegoId": 1,
+      "cantidad": 1,
+      "precioUnitario": 89.99,
+      "subtotal": 89.99
+    },
+    {
+      "id": "7db7",
+      "pedidoId": "3fc1",
+      "juegoId": 2,
+      "cantidad": 1,
+      "precioUnitario": 39.99,
+      "subtotal": 39.99
+    },
+    {
+      "id": "0c13",
+      "pedidoId": "51e8",
+      "juegoId": "2",
+      "cantidad": 1,
+      "precioUnitario": 39.99,
+      "subtotal": 39.99
+    },
+    {
+      "id": "1fce",
+      "pedidoId": "4b52",
+      "juegoId": "5",
+      "cantidad": 1,
+      "precioUnitario": 219.99,
+      "subtotal": 219.99
+    }
+  ]
+}

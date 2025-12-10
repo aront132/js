@@ -1,0 +1,15 @@
+/* Custom styles for the Modal component */
+.modal-content {
+  border-radius: 0.5rem;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  border-bottom: 1px solid var(--surface-color-dark);
+  padding: 1rem 1.5rem;
+}
+
+.modal-body {
+  padding: 1.5rem;
+}

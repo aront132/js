@@ -1,0 +1,7 @@
+.custom-card {
+  background-color: var(--surface-color, #1e1e1e);
+  border: 1px solid var(--bs-border-color, #333);
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
