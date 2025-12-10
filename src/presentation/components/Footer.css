@@ -1,0 +1,76 @@
+/* =========================================
+   4. FOOTER PREMIUM (AÑADIR AL FINAL)
+   ========================================= */
+
+.gv-footer {
+  background: rgba(8, 10, 14, 0.95); /* Fondo oscuro casi sólido */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  z-index: 10;
+}
+
+/* Enlaces del footer */
+.footer-link {
+  color: #a0a0a0;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.footer-link:hover {
+  color: var(--bs-primary);
+  transform: translateX(5px); /* Efecto de desplazamiento */
+  text-shadow: 0 0 10px rgba(102, 252, 241, 0.4);
+}
+
+/* Botones de Redes Sociales */
+.social-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Rebote suave */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+}
+
+/* Efectos Hover Específicos por Red Social */
+.social-btn:hover {
+  transform: translateY(-5px) scale(1.1);
+  color: #fff;
+}
+
+.social-btn.facebook:hover {
+  background: #1877f2;
+  box-shadow: 0 0 20px rgba(24, 119, 242, 0.6);
+  border-color: #1877f2;
+}
+
+.social-btn.tiktok:hover {
+  background: #000;
+  box-shadow: 0 0 20px rgba(255, 0, 80, 0.4), 0 0 20px rgba(0, 242, 234, 0.4); /* Efecto glitch Tiktok */
+  border-color: #fff;
+}
+
+.social-btn.instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  box-shadow: 0 0 20px rgba(220, 39, 67, 0.6);
+  border-color: transparent;
+}
+
+.social-btn.whatsapp:hover {
+  background: #25d366;
+  box-shadow: 0 0 20px rgba(37, 211, 102, 0.6);
+  border-color: #25d366;
+}
+
+.tracking-wider {
+  letter-spacing: 2px;
+}

@@ -5,6 +5,7 @@ import Card from "../../components/Card";
 import Modal from "../../components/Modal";
 import ConfirmModal from "../../components/ConfirmModal";
 import ProductoForm from "../../components/ProductoForm";
+import { getImageUrl } from "../../../domain/shared/utils/imageUtils"; 
 import "./AdminProductosPage.css";
 
 const AdminProductosPage: React.FC = () => {
@@ -41,10 +42,8 @@ const AdminProductosPage: React.FC = () => {
       try {
         await JuegosRepository.eliminar(juegoAEliminarId);
         await cargarJuegos();
-        console.log("Juego eliminado correctamente");
       } catch (error) {
         console.error("Error al eliminar el juego:", error);
-        console.log("Error al eliminar el juego");
       } finally {
         setJuegoAEliminarId(null);
         setShowConfirmModal(false);
@@ -67,89 +66,83 @@ const AdminProductosPage: React.FC = () => {
   const handleFormSubmit = async (valores: Omit<Juego, "id">) => {
     try {
       if (juegoAEditar) {
+        // PATCH para no borrar datos si no se envían todos
         await JuegosRepository.actualizar(juegoAEditar.id, valores);
-        console.log("Juego actualizado correctamente");
       } else {
         await JuegosRepository.crear(valores);
-        console.log("Juego creado correctamente");
       }
       await cargarJuegos();
       handleCloseModals();
-    } catch {
-      console.log(`Error al ${juegoAEditar ? "actualizar" : "crear"} el juego`);
+    } catch (err) {
+      console.error(err);
     }
   };
 
   return (
     <>
-      <Card>
-        <div className="d-flex justify-content-between align-items-center mb-3">
-          <h3 className="mb-0">Listado de productos</h3>
+      <Card className="admin-container border-0 bg-transparent shadow-none p-0">
+        <div className="d-flex justify-content-between align-items-center mb-4">
+          <h3 className="mb-0 text-white fw-bold">Gestión de Productos</h3>
           <button
-            className="btn btn-primary"
+            className="btn btn-primary d-flex align-items-center gap-2"
             onClick={() => handleOpenFormModal(null)}
           >
-            <i className="bi bi-plus-circle me-2" />
-            Nuevo Producto
+            <i className="bi bi-plus-lg" />
+            <span className="d-none d-md-inline">Nuevo Producto</span>
           </button>
         </div>
-        <div className="table-responsive">
-          <table className="table table-striped align-middle">
-            <thead>
-              <tr>
-                <th>ID</th>
-                <th>Título</th>
-                <th>Plataforma</th>
-                <th>Género</th>
-                <th className="text-end">Precio</th>
-                <th className="text-center">Stock</th>
-                <th className="text-center">Destacado</th>
-                <th className="text-center">Acciones</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cargando ? (
-                <tr>
-                  <td colSpan={8} className="text-center py-5">
-                    <div className="spinner-border" role="status">
-                      <span className="visually-hidden">Cargando...</span>
+
+        {cargando ? (
+          <div className="text-center py-5">
+            <div className="spinner-border text-primary" role="status"></div>
+          </div>
+        ) : (
+          <div className="admin-grid">
+            {juegos.map((j) => (
+              <div key={j.id} className="admin-card">
+                <div className="admin-card-img">
+                  <img src={getImageUrl(j.imgFile)} alt={j.titulo} />
+                  {j.destacado && <span className="badge-destacado"><i className="bi bi-star-fill"></i></span>}
+                </div>
+                
+                <div className="admin-card-body">
+                  <div className="d-flex justify-content-between align-items-start mb-2">
+                    <h5 className="admin-card-title text-truncate" title={j.titulo}>{j.titulo}</h5>
+                    <span className="badge bg-dark border border-secondary">{j.plataforma}</span>
+                  </div>
+                  
+                  <div className="admin-card-info">
+                    <div className="info-item">
+                      <span className="label">Precio</span>
+                      <span className="value text-success">S/ {Number(j.precio || 0).toFixed(2)}</span>
                     </div>
-                  </td>
-                </tr>
-              ) : (
-                juegos.map((j) => (
-                  <tr key={j.id}>
-                    <td><code>{j.id}</code></td>
-                    <td>{j.titulo}</td>
-                    <td>{j.plataforma}</td>
-                    <td>{j.genero}</td>
-                    <td className="text-end">S/ {j.precio.toFixed(2)}</td>
-                    <td className="text-center">{j.stock}</td>
-                    <td className="text-center">{j.destacado ? "✔️" : "❌"}</td>
-                    <td className="text-center">
-                      <button
-                        className="btn btn-warning btn-sm me-2"
-                        title="Editar"
-                        onClick={() => handleOpenFormModal(j)}
-                      >
-                        <i className="bi bi-pencil-fill" />
-                        Editar
-                      </button>
-                      <button
-                        className="btn btn-danger btn-sm"
-                        title="Eliminar"
-                        onClick={() => handleRequestDelete(j.id)}
-                      >
-                        <i className="bi bi-trash-fill" />
-                        Eliminar
-                      </button>
-                    </td>
-                  </tr>
-                ))
-              )}
-            </tbody>
-          </table>
-        </div>
+                    <div className="info-item">
+                      <span className="label">Stock</span>
+                      <span className={`value ${j.stock < 5 ? 'text-danger' : 'text-white'}`}>
+                        {j.stock}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="admin-card-actions">
+                    <button
+                      className="btn btn-outline-warning btn-sm flex-grow-1"
+                      onClick={() => handleOpenFormModal(j)}
+                    >
+                      <i className="bi bi-pencil-fill me-1" /> Editar
+                    </button>
+                    <button
+                      className="btn btn-outline-danger btn-sm"
+                      onClick={() => handleRequestDelete(j.id)}
+                    >x
+                      <i className="bi bi-trash-fill" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </Card>
 
       <Modal
@@ -168,8 +161,8 @@ const AdminProductosPage: React.FC = () => {
         show={showConfirmModal}
         onClose={handleCloseModals}
         onConfirm={handleConfirmDelete}
-        title="Confirmar Eliminación"
-        body="¿Estás seguro de que quieres eliminar este producto? Esta acción no se puede deshacer."
+        title="Eliminar Producto"
+        body={`¿Estás seguro de eliminar "${juegos.find(j => j.id === juegoAEliminarId)?.titulo}"?`}
       />
     </>
   );

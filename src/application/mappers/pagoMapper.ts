@@ -27,8 +27,6 @@ const toDomain = (dto: ComprobantePagoDTO): ComprobantePago => {
 
 const toDTO = (domain: ComprobantePago): ComprobantePagoDTO => {
   return {
-    // CORRECCIÓN: Usamos spread operator (...) ya que ahora
-    // el dominio y el DTO tienen la misma estructura simple.
     ...domain
   };
 };

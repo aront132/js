@@ -130,10 +130,7 @@ const LoginPage: React.FC = () => {
               </p>
               <ul className="list-unstyled mb-0">
                 <li>
-                  <strong>Admin:</strong> admin@gamevault.com / 123456
-                </li>
-                <li>
-                  <strong>Cliente:</strong> cliente@gamevault.com / 123456
+                <strong> Toda informacion es cofidencial </strong>
                 </li>
               </ul>
             </div>

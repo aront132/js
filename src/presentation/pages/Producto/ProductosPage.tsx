@@ -43,7 +43,7 @@ const ProductosPage: React.FC = () => {
   );
 
   const juegosFiltrados = juegos.filter((j) => {
-    // Protección adicional por si la plataforma/genero viene undefined en la data
+
     const plataformaJuego = j.plataforma ? j.plataforma.toLowerCase() : "";
     const generoJuego = j.genero ? j.genero.toLowerCase() : "";
 

@@ -1,7 +1,7 @@
-/* src/presentation/pages/NosotrosPage.css */
+
 
 .nosotros-page {
-    /* Variables locales si se necesitan */
+
     --tech-bg: #111;
 }
 
@@ -36,7 +36,7 @@
     justify-content: center;
 }
 
-/* Efecto hover suave para las tarjetas */
+
 .card-hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -46,19 +46,19 @@
     box-shadow: 0 10px 20px rgba(68, 138, 255, 0.15) !important;
 }
 
-/* Ilustración de código */
+
 .tech-illustration {
-    background: #0d1117; /* Color estilo editor de código */
+    background: #0d1117;
     border: 1px solid #30363d;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
-    font-family: 'Fira Code', monospace; /* O la fuente mono por defecto */
+    font-family: 'Fira Code', monospace; 
 }
 
 .code-snippet {
     background: transparent;
 }
 
-/* Botón con brillo */
+
 .shadow-glow {
     box-shadow: 0 0 15px rgba(68, 138, 255, 0.5);
     transition: box-shadow 0.3s ease;
@@ -68,12 +68,12 @@
     box-shadow: 0 0 25px rgba(68, 138, 255, 0.8);
 }
 
-/* Utilidad para texto morado (Bootstrap icons) */
+
 .text-purple {
     color: #a855f7;
 }
 
-/* Fondo degradado para el CTA */
+
 .bg-gradient-primary-dark {
     background: linear-gradient(135deg, rgba(30,30,30,1) 0%, rgba(20,20,35,1) 100%);
     border: 1px solid rgba(255, 255, 255, 0.05);

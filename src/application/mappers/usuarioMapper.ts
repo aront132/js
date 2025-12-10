@@ -24,7 +24,7 @@ const toDomain = (dto: any): Usuario => {
     pais: dto.pais,
     departamento: dto.departamento,
     correo: dto.correo,
-    password: dto.password, 
+    password: dto.password,
   };
 };
 const toDTO = (domain: Usuario): UsuarioDTO => {

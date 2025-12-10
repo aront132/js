@@ -1,13 +1,10 @@
 import { Pedido } from '../../domain/pedidos/Pedido';
 import { EstadoPedido } from '../../domain/pedidos/EstadoPedido';
-import { PedidoID } from '../../domain/shared/value-objects/PedidoID';
 
-
-// DTO for a Pedido
 interface PedidoDTO {
   id: string;
   usuarioId: string;
-  fecha: string; // ISO date string
+  fecha: string; 
   total: number;
   estado: "pendiente" | "pagado" | "cancelado" | "completado";
 }

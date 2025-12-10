@@ -4,8 +4,8 @@ import "./NosotrosPage.css";
 const NosotrosPage = () => {
   return (
     <div className="nosotros-page">
-      
-      {/* Hero Section */}
+
+
       <section className="hero-nosotros text-center py-5 position-relative">
         <div className="container position-relative z-1">
           <h1 className="display-3 fw-bold mb-3 text-gradient-neon">Sobre GameVault</h1>
@@ -31,8 +31,8 @@ const NosotrosPage = () => {
                   <h3 className="h4 mb-0 text-white">Nuestra Misión</h3>
                 </div>
                 <p className="text-secondary">
-                  Facilitar el acceso a los mejores títulos del mercado mediante una plataforma 
-                  segura, rápida y fácil de usar. Creemos que comprar un juego debe ser tan 
+                  Facilitar el acceso a los mejores títulos del mercado mediante una plataforma
+                  segura, rápida y fácil de usar. Creemos que comprar un juego debe ser tan
                   emocionante como jugarlo.
                 </p>
               </Card>
@@ -46,8 +46,8 @@ const NosotrosPage = () => {
                   <h3 className="h4 mb-0 text-white">Nuestra Visión</h3>
                 </div>
                 <p className="text-secondary">
-                  Convertirnos en el referente líder de distribución digital, conectando a 
-                  desarrolladores y gamers en una comunidad vibrante donde la tecnología 
+                  Convertirnos en el referente líder de distribución digital, conectando a
+                  desarrolladores y gamers en una comunidad vibrante donde la tecnología
                   potencia la diversión.
                 </p>
               </Card>
@@ -91,16 +91,14 @@ const NosotrosPage = () => {
           </div>
         </div>
       </section>
-
-      {/* Tech Stack (Lo que ya tenías, pero estilizado) */}
       <section className="py-5">
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-6 mb-4 mb-lg-0">
               <h2 className="mb-4 text-white">Impulsado por Tecnología Moderna</h2>
               <p className="text-secondary mb-4">
-                GameVault no es solo una cara bonita. Bajo el capó, utilizamos un stack tecnológico 
-                robusto para garantizar rendimiento, escalabilidad y una experiencia de desarrollo 
+                GameVault no es solo una cara bonita. Bajo el capó, utilizamos un stack tecnológico
+                robusto para garantizar rendimiento, escalabilidad y una experiencia de desarrollo
                 excepcional.
               </p>
               <div className="d-flex flex-wrap gap-3">
@@ -119,10 +117,10 @@ const NosotrosPage = () => {
               </div>
             </div>
             <div className="col-lg-6">
-                <div className="tech-illustration p-5 rounded-4 position-relative overflow-hidden">
-                    <div className="code-snippet">
-                        <pre className="m-0 text-success small">
-{`const GameVault = () => {
+              <div className="tech-illustration p-5 rounded-4 position-relative overflow-hidden">
+                <div className="code-snippet">
+                  <pre className="m-0 text-success small">
+                    {`const GameVault = () => {
   const [fun, setFun] = useState(true);
   
   return (
@@ -131,24 +129,24 @@ const NosotrosPage = () => {
     </Experience>
   );
 };`}
-                        </pre>
-                    </div>
+                  </pre>
                 </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
- 
+
       <section className="cta-section py-5 text-center mt-4">
         <div className="container">
-            <Card className="bg-gradient-primary-dark border-0 p-5">
-                <h2 className="mb-3 text-white">¿Listo para jugar?</h2>
-                <p className="lead text-light mb-4">Explora nuestro catálogo y encuentra tu próxima gran aventura hoy mismo.</p>
-                <a href="/productos" className="btn btn-primary btn-lg px-5 rounded-pill shadow-glow">
-                    Ver Catálogo <i className="bi bi-arrow-right ms-2"></i>
-                </a>
-            </Card>
+          <Card className="bg-gradient-primary-dark border-0 p-5">
+            <h2 className="mb-3 text-white">¿Listo para jugar?</h2>
+            <p className="lead text-light mb-4">Explora nuestro catálogo y encuentra tu próxima gran aventura hoy mismo.</p>
+            <a href="/productos" className="btn btn-primary btn-lg px-5 rounded-pill shadow-glow">
+              Ver Catálogo <i className="bi bi-arrow-right ms-2"></i>
+            </a>
+          </Card>
         </div>
       </section>
 

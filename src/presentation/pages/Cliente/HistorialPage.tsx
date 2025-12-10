@@ -29,7 +29,7 @@ const HistorialPage: React.FC = () => {
         const pedidosUsuario = await PedidosRepository.obtenerPorUsuario(usuario.id);
         const completos: PedidoConDetalles[] = [];
 
-        // Ordenamos por fecha (más reciente primero)
+      
         const pedidosOrdenados = pedidosUsuario.sort(
           (a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime()
         );
@@ -37,14 +37,14 @@ const HistorialPage: React.FC = () => {
         for (const p of pedidosOrdenados) {
           const detalles = await DetallePedidosRepository.obtenerPorPedido(p.id);
           
-          // CORRECCIÓN: Manejamos el caso donde un juego ya no existe (Error 404)
+     
           const detallesPromises = detalles.map(async (d) => {
             try {
               const juego = await JuegosRepository.obtenerPorId(d.juegoId);
               return { ...d, juego };
             } catch (error) {
               console.warn(`Producto eliminado o no encontrado (ID: ${d.juegoId}) en pedido #${p.id}`);
-              return null; // Retornamos null para filtrarlo después
+              return null; 
             }
           });
 

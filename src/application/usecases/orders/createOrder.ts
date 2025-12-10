@@ -6,7 +6,7 @@ import { EstadoPedido } from "../../../domain/pedidos/EstadoPedido";
 
 type CreateOrderParams = {
   usuarioId: string;
-  items: any[]; // Usamos 'any[]' temporalmente o 'ItemCarrito[]' si no da error de importación
+  items: any[]; 
   total: number;
   estado?: "pagado" | "cancelado";
 };
@@ -18,7 +18,7 @@ export const createOrder = async ({
   estado = "pagado",
 }: CreateOrderParams): Promise<Pedido> => {
 
-  // CORRECCIÓN: Convertimos el string literal al tipo Enum 'EstadoPedido' usando 'as'
+
   const pedido = await PedidosRepository.crear({
     usuarioId,
     fecha: new Date().toISOString(),

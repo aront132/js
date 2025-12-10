@@ -96,7 +96,6 @@ const CheckoutPage: React.FC = () => {
   };
 
   const onInvalid = () => {
-    // Evita quedarse en estado de "Procesando..."
     return;
   };
 
