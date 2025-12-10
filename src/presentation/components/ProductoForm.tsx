@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { juegoSchema, JuegoSchema } from "../../application/validators/juegoSchema";
 import { getImageUrl } from "../../domain/shared/utils/imageUtils";
-
+import api from "../../infrastructure/api/apiClient";
 interface ProductoFormProps {
   onSubmit: (data: Omit<Juego, "id">) => void;
   onCancel: () => void;
@@ -70,16 +70,24 @@ const ProductoForm: React.FC<ProductoFormProps> = ({
     }
   }, [juegoToEdit, reset]);
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+ const handleFileChange = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        const base64String = reader.result as string;
-        setPreview(base64String);
-        setValue("imgFile", base64String);
-      };
-      reader.readAsDataURL(file);
+      const objectUrl = URL.createObjectURL(file);
+      setPreview(objectUrl);
+      const formData = new FormData();
+      formData.append("imagen", file);
+
+      try {
+        const res = await api.post<{ filename: string }>("/upload", formData, {
+          headers: { "Content-Type": undefined },
+        });
+        setValue("imgFile", res.data.filename);
+        console.log("Imagen subida correctamente:", res.data.filename);
+      } catch (error) {
+        console.error("Error al subir imagen:", error);
+        alert("Error al subir la imagen al servidor.");
+      }
     }
   };
 
@@ -92,7 +100,6 @@ const ProductoForm: React.FC<ProductoFormProps> = ({
 
   return (
     <form onSubmit={handleSubmit(onSubmitForm)}>
-      {/* Previsualización de imagen */}
       <div className="mb-4 text-center">
         <div
           className="d-inline-block border border-secondary rounded overflow-hidden position-relative"

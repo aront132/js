@@ -1,70 +1,97 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. 📂 src/domain/ (La Capa de Dominio)
 
-## Expanding the ESLint configuration
+carrito/: Define qué es un ítem del carrito (CarritoItem.ts) y la estructura del carrito (Carrito.ts).
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+juegos/: Define la entidad Juego (título, precio, stock, etc.).
 
-- Configure the top-level `parserOptions` property like this:
+pagos/: Define los tipos para procesar pagos (MetodoPago, ComprobantePago, EstadoPago).
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+pedidos/: Define qué es un Pedido, un DetallePedido y los estados posibles (pendiente, pagado, etc.).
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+usuarios/: Define la entidad Usuario y sus roles (admin/cliente).
 
----
+shared/: Contiene utilidades compartidas o "Value Objects" que usabas antes (aunque ahora simplificamos a tipos primitivos), como errores de dominio (DomainError) y validaciones (ValidacionUtils).
 
-## Project quick start (GameVault)
+2. 📂 src/application/ (La Capa de Aplicación)
+Aquí está la lógica de "lo que la aplicación hace". Conecta la vista con los datos.
 
-Siguientes pasos para ejecutar el proyecto en desarrollo:
+usecases/ (Casos de Uso): Son las acciones concretas del usuario. Ejemplos: createOrder (crear pedido y actualizar stock), cancelOrder (cancelar pedido), login (iniciar sesión).
 
-1. Instala dependencias:
+services/: Servicios que agrupan lógica o llaman a los repositorios. Por ejemplo, authService maneja el login y registro.
 
-```powershell
-cd 'c:\Users\Aron\OneDrive\Desktop\proyecto_js'
-npm install
-```
+validators/: Esquemas de validación usando Zod. Aquí defines las reglas de tus formularios (ej: que la contraseña tenga 6 caracteres en registroSchema, o que el precio sea positivo en juegoSchema).
 
-2. Levanta el mock API (json-server) y la app (Vite) en terminales separadas:
+mappers/: Funciones para transformar los datos que vienen "sucios" de la API a tus objetos "limpios" del dominio (toDomain) y viceversa (toDTO).
 
-```powershell
-# json-server (usa puerto 4001)
+3. 📂 src/infrastructure/ (La Capa de Infraestructura)
+Aquí es donde tu app "habla" con el mundo exterior (API, Base de datos).
+
+api/: Configuración de Axios (apiClient.ts). Aquí se define la URL base (localhost:3000) y se configuran interceptores para errores.
+
+repositories/: Son los encargados de hacer las peticiones HTTP (GET, POST, PUT, DELETE). Por ejemplo, juegosRepository.ts tiene los métodos para obtener todos los juegos, crear uno nuevo o eliminarlo. La aplicación nunca llama a la API directamente, siempre usa un repositorio.
+
+4. 📂 src/presentation/ (La Capa de Presentación)
+Aquí vive todo lo visual (React, HTML, CSS). Es lo que el usuario ve.
+
+components/: Piezas reutilizables de la interfaz.
+
+Card: Contenedor estilo cristal/neón para el contenido.
+
+Modal: Ventanas emergentes para formularios.
+
+Nav: La barra de navegación superior.
+
+Footer: El pie de página con redes sociales.
+
+ProductoCard: La tarjeta individual de cada juego en el catálogo.
+
+layouts/: Plantillas maestras que envuelven las páginas.
+
+MainLayout: Contiene el fondo de estrellas, el Nav y el Footer.
+
+AdminLayout y PerfilLayout: Estructuras con menú lateral para las zonas privadas.
+
+pages/: Las vistas completas de la aplicación.
+
+Admin/: Páginas del administrador (AdminProductosPage).
+
+Auth/: Páginas de Login y Registro.
+
+Cliente/: Páginas del usuario (CarritoPage, HistorialPage, PerfilPage).
+
+Producto/: Catálogo (ProductosPage) y detalle (ProductoDetallePage).
+
+Home/ y Nosotros/: Páginas informativas.
+
+hooks/: Lógica de React reutilizable (Custom Hooks).
+
+useAuth: Maneja el usuario logueado y la sesión.
+
+useCarrito: Maneja el estado global del carrito de compras.
+
+5. 📂 src/assets/
+Archivos estáticos como imágenes (img/Producto/*.jpg), logos e iconos.
+
+6. Archivos de Configuración (Raíz)
+db.json: Tu base de datos simulada para json-server.
+
+App.tsx: El componente principal que define las rutas (Routing).
+
+main.tsx: Punto de entrada donde se monta React y se importan los estilos globales.
+
+App.css / index.css: Estilos globales, variables de colores, animaciones de estrellas y efectos neón/glassmorphism.
+
+Instalacion:
+npm install 
+npm install multer cors express
+npm install zod@3.22.4
+npm install json-server@0.17.4 multer
+
+ejecucion de la base de datos:
 npm run server
 
-# en otra terminal
+ejecucion de la paguina: 
 npm run dev
-```
-
-3. Ejecuta pruebas unitarias:
-
-```powershell
-npm test
-```
-
-## Arquitectura y guía rápida
-
-Se introdujo una separación por capas para favorecer mantenibilidad y testing:
-
-- `src/repositories/` — capa que encapsula llamadas HTTP (usa `src/services/apiClient.ts`).
-- `src/usecases/` — lógica de negocio (ej.: `createOrder`, `cancelOrder`).
-- `src/services/` — adaptadores / reexports para compatibilidad con código existente.
-
-Lee `ARCHITECTURE.md` para detalles y pautas de contribución.
-

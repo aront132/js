@@ -356,6 +356,19 @@
       "lanzamiento": "2019-10-31",
       "imgFile": "persona_5_royal.jpg",
       "destacado": true
+    },
+    {
+      "titulo": "Dragon Ball Z: Kakarot - Daima Edition",
+      "descripcion": "Vive la energía de Dragon Ball con Dragon Ball Z: Kakarot Daima Edition para PS5. Explora todas las sagas de DBZ y añade una nueva aventura con Daima: Aventura en el Reino Demoníaco, que recorre el mundo demoníaco junto a Goku (Mini), Panzy, Glorio y más. Esta edición trae contenido descargable que expande la historia original con técnicas inéditas y nuevos territorios.",
+      "precio": 179.9,
+      "stock": 10,
+      "plataforma": "PlayStation",
+      "genero": "Aventura",
+      "desarrollador": "CyberConnect2",
+      "lanzamiento": "0025-07-17",
+      "imgFile": "Dragon_Ball_daima.jpg",
+      "destacado": true,
+      "id": "rXfsa9S"
     }
   ],
   "pedidos": [
