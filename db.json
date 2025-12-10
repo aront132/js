@@ -31,20 +31,22 @@
       "correo": "ta@gmail.com",
       "password": "123",
       "rol": "cliente"
+    },
+    {
+      "id": "fad5",
+      "nombre": "aaron",
+      "apellido": "taco",
+      "edad": 18,
+      "pais": "peru",
+      "departamento": "arequipa",
+      "correo": "aron123@gmail.com",
+      "password": "aronbl123456",
+      "rol": "cliente"
     }
   ],
   "juegos": [
     {
-      "titulo": "Grand Theft Auto V",
-      "plataforma": "Steam",
-      "genero": "Acción",
-      "precio": 89.99,
-      "stock": 12,
-      "descripcion": "Juego de mundo abierto con modo historia y modo online.",
-      "imgFile": "gta_v.png",
-      "destacado": true,
-      "desarrollador": "Rockstar Games",
-      "lanzamiento": "2015-04-14",
+      "stock": 11,
       "id": "1"
     },
     {
@@ -443,6 +445,13 @@
       "fecha": "2025-12-10T06:45:21.187Z",
       "total": 219.99,
       "estado": "pagado"
+    },
+    {
+      "id": "a6ac",
+      "usuarioId": "2",
+      "fecha": "2025-12-10T07:28:40.797Z",
+      "total": 89.99,
+      "estado": "pagado"
     }
   ],
   "detallePedidos": [
@@ -525,6 +534,14 @@
       "cantidad": 1,
       "precioUnitario": 219.99,
       "subtotal": 219.99
+    },
+    {
+      "id": "4ff7",
+      "pedidoId": "a6ac",
+      "juegoId": "1",
+      "cantidad": 1,
+      "precioUnitario": 89.99,
+      "subtotal": 89.99
     }
   ]
 }

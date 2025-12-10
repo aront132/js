@@ -1,10 +1,7 @@
 import { ComprobantePago } from '../../domain/pagos/ComprobantePago';
 import { EstadoPago } from '../../domain/pagos/EstadoPago';
-import { Identificador } from '../../domain/shared/value-objects/Identificador';
-import { Dinero } from '../../domain/shared/value-objects/Dinero';
-import { Fecha } from '../../domain/shared/value-objects/Fecha';
 
-// DTO for a ComprobantePago
+// DTO for a ComprobantePago (Datos que vienen de la API/JSON)
 interface ComprobantePagoDTO {
   id: string;
   monto: number;
@@ -18,9 +15,11 @@ interface ComprobantePagoDTO {
 
 const toDomain = (dto: ComprobantePagoDTO): ComprobantePago => {
   return {
-    id: Identificador.create(dto.id),
-    monto: Dinero.create(dto.monto),
-    fecha: Fecha.create(dto.fecha),
+    // CORRECCIÓN: Asignación directa de tipos simples (string/number).
+    // Eliminamos Identificador.create(), Dinero.create(), etc.
+    id: dto.id,
+    monto: dto.monto,
+    fecha: dto.fecha,
     estado: dto.estado as EstadoPago,
     metodo: dto.metodo,
   };
@@ -28,11 +27,9 @@ const toDomain = (dto: ComprobantePagoDTO): ComprobantePago => {
 
 const toDTO = (domain: ComprobantePago): ComprobantePagoDTO => {
   return {
-    id: domain.id.getValue(),
-    monto: domain.monto.getValue(),
-    fecha: domain.fecha.toISOString(),
-    estado: domain.estado,
-    metodo: domain.metodo,
+    // CORRECCIÓN: Usamos spread operator (...) ya que ahora
+    // el dominio y el DTO tienen la misma estructura simple.
+    ...domain
   };
 };
 

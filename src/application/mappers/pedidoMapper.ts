@@ -1,9 +1,7 @@
 import { Pedido } from '../../domain/pedidos/Pedido';
 import { EstadoPedido } from '../../domain/pedidos/EstadoPedido';
-import { Identificador } from '../../domain/shared/value-objects/Identificador';
 import { PedidoID } from '../../domain/shared/value-objects/PedidoID';
-import { Fecha } from '../../domain/shared/value-objects/Fecha';
-import { TotalPedido } from '../../domain/shared/value-objects/TotalPedido';
+
 
 // DTO for a Pedido
 interface PedidoDTO {
@@ -16,21 +14,17 @@ interface PedidoDTO {
 
 const toDomain = (dto: PedidoDTO): Pedido => {
   return {
-    id: PedidoID.create(dto.id),
-    usuarioId: Identificador.create(dto.usuarioId),
-    fecha: Fecha.create(dto.fecha),
-    total: TotalPedido.create(dto.total),
+    
+    id: dto.id,
+    usuarioId: dto.usuarioId,
+    fecha: dto.fecha,
+    total: dto.total,
     estado: dto.estado as EstadoPedido,
   };
 };
-
 const toDTO = (domain: Pedido): PedidoDTO => {
-  return {
-    id: domain.id.getValue(),
-    usuarioId: domain.usuarioId.getValue(),
-    fecha: domain.fecha.toISOString(),
-    total: domain.total.getValue(),
-    estado: domain.estado,
+ return {
+    ...domain
   };
 };
 

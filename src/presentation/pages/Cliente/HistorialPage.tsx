@@ -28,15 +28,34 @@ const HistorialPage: React.FC = () => {
       try {
         const pedidosUsuario = await PedidosRepository.obtenerPorUsuario(usuario.id);
         const completos: PedidoConDetalles[] = [];
-        for (const p of pedidosUsuario.sort((a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime())) {
+
+        // Ordenamos por fecha (más reciente primero)
+        const pedidosOrdenados = pedidosUsuario.sort(
+          (a, b) => new Date(b.fecha).getTime() - new Date(a.fecha).getTime()
+        );
+
+        for (const p of pedidosOrdenados) {
           const detalles = await DetallePedidosRepository.obtenerPorPedido(p.id);
-          const detallesConJuego = await Promise.all(
-            detalles.map(async (d) => {
+          
+          // CORRECCIÓN: Manejamos el caso donde un juego ya no existe (Error 404)
+          const detallesPromises = detalles.map(async (d) => {
+            try {
               const juego = await JuegosRepository.obtenerPorId(d.juegoId);
               return { ...d, juego };
-            })
+            } catch (error) {
+              console.warn(`Producto eliminado o no encontrado (ID: ${d.juegoId}) en pedido #${p.id}`);
+              return null; // Retornamos null para filtrarlo después
+            }
+          });
+
+          const resultados = await Promise.all(detallesPromises);
+          
+          // Filtramos los nulos (juegos que dieron error)
+          const detallesValidos = resultados.filter(
+            (r): r is (DetallePedido & { juego: Juego }) => r !== null
           );
-          completos.push({ ...p, detalles: detallesConJuego });
+
+          completos.push({ ...p, detalles: detallesValidos });
         }
         setPedidos(completos);
       } catch (error) {
@@ -50,7 +69,12 @@ const HistorialPage: React.FC = () => {
 
   if (cargando)
     return (
-      <div className="text-center">Cargando historial de pedidos...</div>
+      <div className="text-center py-5">
+        <div className="spinner-border text-primary" role="status">
+          <span className="visually-hidden">Cargando...</span>
+        </div>
+        <p className="mt-2">Cargando historial de pedidos...</p>
+      </div>
     );
 
   if (!usuario)
@@ -81,6 +105,7 @@ const HistorialPage: React.FC = () => {
   const getEstadoBadge = (estado: string) => {
     switch (estado) {
       case "pagado":
+      case "completado":
         return "bg-success";
       case "pendiente":
         return "bg-warning text-dark";
@@ -104,7 +129,7 @@ const HistorialPage: React.FC = () => {
           <Card key={p.id} className="mb-3">
             <div className="d-flex justify-content-between align-items-start mb-2">
               <div>
-                <h5 className="mb-1">Pedido #{p.id}</h5>
+                <h5 className="mb-1">Pedido <small className="text-muted">#{p.id}</small></h5>
                 <p className="small" style={{ color: "var(--text-secondary)" }}>
                   Fecha: {new Date(p.fecha).toLocaleString()}
                 </p>
@@ -113,28 +138,36 @@ const HistorialPage: React.FC = () => {
                 {p.estado.toUpperCase()}
               </span>
             </div>
+            
             <ul className="list-group list-group-flush mb-3">
-              {p.detalles.map((d) => (
-                <li
-                  key={d.id}
-                  className="list-group-item bg-transparent d-flex justify-content-between align-items-center px-0"
-                >
-                  <div>
-                    {d.juego.titulo}
-                    <span
-                      className="small d-block"
-                      style={{ color: "var(--text-secondary)" }}
-                    >
-                      Cantidad: {d.cantidad}
+              {p.detalles.length > 0 ? (
+                p.detalles.map((d) => (
+                  <li
+                    key={d.id}
+                    className="list-group-item bg-transparent d-flex justify-content-between align-items-center px-0"
+                  >
+                    <div>
+                      {d.juego.titulo}
+                      <span
+                        className="small d-block"
+                        style={{ color: "var(--text-secondary)" }}
+                      >
+                        Cantidad: {d.cantidad}
+                      </span>
+                    </div>
+                    <span className="fw-bold">
+                      S/ {(d.cantidad * d.precioUnitario).toFixed(2)}
                     </span>
-                  </div>
-                  <span className="fw-bold">
-                    S/ {(d.cantidad * d.precioUnitario).toFixed(2)}
-                  </span>
+                  </li>
+                ))
+              ) : (
+                <li className="list-group-item bg-transparent text-muted fst-italic px-0">
+                  <small>Detalles no disponibles (productos eliminados)</small>
                 </li>
-              ))}
+              )}
             </ul>
-            <div className="d-flex justify-content-between align-items-center">
+
+            <div className="d-flex justify-content-between align-items-center pt-2 border-top border-secondary">
               <div>
                 <button
                   className="btn btn-sm btn-outline-secondary me-2"
@@ -146,7 +179,7 @@ const HistorialPage: React.FC = () => {
                 {p.estado === "pendiente" && (
                   <button className="btn btn-sm btn-danger" onClick={() => handleCancelarPedido(p.id)}>
                     <i className="bi bi-x-circle me-1"></i>
-                    Cancelar pedido
+                    Cancelar
                   </button>
                 )}
               </div>

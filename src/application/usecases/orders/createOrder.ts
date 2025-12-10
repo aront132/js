@@ -1,12 +1,12 @@
 import PedidosRepository from "../../../infrastructure/repositories/pedidosRepository";
 import DetallePedidosRepository from "../../../infrastructure/repositories/detallePedidosRepository";
 import JuegosRepository from "../../../infrastructure/repositories/juegosRepository";
-import { ItemCarrito } from "../../../domain/carrito/Carrito";
 import { Pedido } from "../../../domain/pedidos/Pedido";
+import { EstadoPedido } from "../../../domain/pedidos/EstadoPedido";
 
 type CreateOrderParams = {
   usuarioId: string;
-  items: ItemCarrito[];
+  items: any[]; // Usamos 'any[]' temporalmente o 'ItemCarrito[]' si no da error de importación
   total: number;
   estado?: "pagado" | "cancelado";
 };
@@ -18,13 +18,13 @@ export const createOrder = async ({
   estado = "pagado",
 }: CreateOrderParams): Promise<Pedido> => {
 
+  // CORRECCIÓN: Convertimos el string literal al tipo Enum 'EstadoPedido' usando 'as'
   const pedido = await PedidosRepository.crear({
     usuarioId,
     fecha: new Date().toISOString(),
     total,
-    estado,
+    estado: estado as EstadoPedido, 
   });
-
 
   await Promise.all(
     items.map(async (item) => {
@@ -43,7 +43,6 @@ export const createOrder = async ({
             stock: Math.max(0, nuevoStock),
           });
         } catch (err) {
-       
           console.warn("No se pudo actualizar stock para juego", item.juego.id, err);
         }
       }
